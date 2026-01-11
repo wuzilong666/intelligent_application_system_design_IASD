@@ -1,0 +1,588 @@
+{
+  "region": "xuanzhou",
+  "region_info": {
+    "lat": 30.9,
+    "lon": 118.75,
+    "name": "宣城宣州区",
+    "name_en": "Xuanzhou District",
+    "level": "district"
+  },
+  "timestamp": "2026-01-11T19:59:02.852620",
+  "data_sources": {
+    "satellite": true,
+    "ground": true,
+    "radar": true,
+    "simulation": true
+  },
+  "model_used": "api",
+  "model_architecture": {
+    "convlstm": {
+      "input_shape": [
+        10,
+        64,
+        64,
+        3
+      ],
+      "filters": [
+        64,
+        64,
+        64
+      ],
+      "kernel_size": [
+        3,
+        3
+      ],
+      "dropout": 0.2,
+      "learning_rate": 0.001
+    },
+    "cnn3d": {
+      "input_shape": [
+        10,
+        64,
+        64,
+        3
+      ],
+      "filters": [
+        32,
+        64,
+        128
+      ],
+      "kernel_size": [
+        3,
+        3,
+        3
+      ],
+      "dropout": 0.3,
+      "learning_rate": 0.001
+    }
+  },
+  "current_weather": {
+    "timestamp": "2026-01-11T19:57:35.607882",
+    "region": "xuancheng",
+    "latitude": 30.9,
+    "longitude": 118.8,
+    "temperature": -0.2,
+    "humidity": 61.6,
+    "pressure": 999.3,
+    "wind_speed": 11.1,
+    "wind_direction": "东北",
+    "precipitation": 0.4,
+    "cloud_cover": 75.5,
+    "visibility": 14.6
+  },
+  "predictions": {
+    "1h": {
+      "success": true,
+      "predictions": [
+        {
+          "timestamp": "2026-01-11T19:57:58.522440",
+          "temperature": 0.7,
+          "temperature_max": 2.7,
+          "temperature_min": -1.3,
+          "humidity": 60.1,
+          "pressure": 996.5,
+          "wind_speed": 10.6,
+          "wind_direction": "N",
+          "wind_level": 5,
+          "precipitation_probability": 18.9,
+          "visibility": 15.6,
+          "aqi": 59,
+          "air_quality": "Good",
+          "weather_condition": "Sunny"
+        },
+        {
+          "timestamp": "2026-01-11T20:57:58.522440",
+          "temperature": 1.2,
+          "temperature_max": 3.2,
+          "temperature_min": -0.8,
+          "humidity": 54.3,
+          "pressure": 995.1,
+          "wind_speed": 12.5,
+          "wind_direction": "E",
+          "wind_level": 6,
+          "precipitation_probability": 47.5,
+          "visibility": 18.1,
+          "aqi": 50,
+          "air_quality": "Good",
+          "weather_condition": "Overcast"
+        }
+      ],
+      "analysis": "```json\n{\n  \"forecast\": {\n    \"target_time\": \"2026-01-11T20:57:00 - 23:57:00\",\n    \"temperature_range\": \"-3.0°C 至 1.5°C\",\n    \"precipitation_probability\": \"85%\",\n    \"wind_info\": {\n      \"speed\": \"10.0 - 12.0 m/s\",\n      \"direction\": \"东北偏北\",\n      \"force_description\": \"5-6级 (强风)\"\n    },\n    \"weather_phenomenon\": \"雨夹雪转小雪\",\n    \"confidence\": \"中等 (由于历史数据波动较大)\"\n  },\n  \"analysis_summary\": \"基于过去10小时的数据，气温在0°C上下剧烈波动，且持续伴有微量降水。随着夜间到来，气温预计将维持在冰点附近或以下，降水形态极可能由雨/雨夹雪转为雪。风速呈增强趋势，需注意防风保暖。\"\n}\n```",
+      "method": "gemini_api",
+      "uncertainty": {
+        "confidence_level": 0.95,
+        "temperature_uncertainty": 0.25,
+        "method": "monte_carlo",
+        "description": "基于历史数据和模型输出的不确定性估计"
+      },
+      "time_points": [
+        "2026-01-11T19:57:35.614798",
+        "2026-01-11T20:57:35.614798"
+      ],
+      "horizon": "1h",
+      "horizon_description": "未来1小时"
+    },
+    "6h": {
+      "success": true,
+      "predictions": [
+        {
+          "timestamp": "2026-01-11T19:58:21.478478",
+          "temperature": 3.5,
+          "temperature_max": 5.5,
+          "temperature_min": 1.5,
+          "humidity": 58.3,
+          "pressure": 992.4,
+          "wind_speed": 8.4,
+          "wind_direction": "N",
+          "wind_level": 5,
+          "precipitation_probability": 24.1,
+          "visibility": 15.8,
+          "aqi": 63,
+          "air_quality": "Good",
+          "weather_condition": "Overcast"
+        },
+        {
+          "timestamp": "2026-01-11T20:58:21.478478",
+          "temperature": 3.1,
+          "temperature_max": 5.1,
+          "temperature_min": 1.1,
+          "humidity": 58.5,
+          "pressure": 998.7,
+          "wind_speed": 13.7,
+          "wind_direction": "SE",
+          "wind_level": 6,
+          "precipitation_probability": 0,
+          "visibility": 13.3,
+          "aqi": 0,
+          "air_quality": "Good",
+          "weather_condition": "Cloudy"
+        },
+        {
+          "timestamp": "2026-01-11T21:58:21.478478",
+          "temperature": 4.1,
+          "temperature_max": 6.1,
+          "temperature_min": 2.1,
+          "humidity": 61.9,
+          "pressure": 996.3,
+          "wind_speed": 11.8,
+          "wind_direction": "W",
+          "wind_level": 6,
+          "precipitation_probability": 31.4,
+          "visibility": 12.9,
+          "aqi": 50,
+          "air_quality": "Moderate",
+          "weather_condition": "Sunny"
+        },
+        {
+          "timestamp": "2026-01-11T22:58:21.478478",
+          "temperature": 2.8,
+          "temperature_max": 4.8,
+          "temperature_min": 0.8,
+          "humidity": 67.3,
+          "pressure": 997.5,
+          "wind_speed": 10.7,
+          "wind_direction": "E",
+          "wind_level": 5,
+          "precipitation_probability": 47.3,
+          "visibility": 16.4,
+          "aqi": 53,
+          "air_quality": "Good",
+          "weather_condition": "Thunderstorm"
+        },
+        {
+          "timestamp": "2026-01-11T23:58:21.478478",
+          "temperature": 5.3,
+          "temperature_max": 7.3,
+          "temperature_min": 3.3,
+          "humidity": 60.0,
+          "pressure": 992.2,
+          "wind_speed": 16.4,
+          "wind_direction": "SW",
+          "wind_level": 7,
+          "precipitation_probability": 15.8,
+          "visibility": 17.0,
+          "aqi": 74,
+          "air_quality": "Good",
+          "weather_condition": "Sunny"
+        },
+        {
+          "timestamp": "2026-01-12T00:58:21.478478",
+          "temperature": 6.4,
+          "temperature_max": 8.4,
+          "temperature_min": 4.4,
+          "humidity": 65.0,
+          "pressure": 995.6,
+          "wind_speed": 11.8,
+          "wind_direction": "W",
+          "wind_level": 6,
+          "precipitation_probability": 27.7,
+          "visibility": 14.6,
+          "aqi": 37,
+          "air_quality": "Moderate",
+          "weather_condition": "Overcast"
+        },
+        {
+          "timestamp": "2026-01-12T01:58:21.478478",
+          "temperature": 7.3,
+          "temperature_max": 9.3,
+          "temperature_min": 5.3,
+          "humidity": 65.6,
+          "pressure": 997.9,
+          "wind_speed": 11.3,
+          "wind_direction": "S",
+          "wind_level": 6,
+          "precipitation_probability": 12.9,
+          "visibility": 13.3,
+          "aqi": 63,
+          "air_quality": "Good",
+          "weather_condition": "Cloudy"
+        }
+      ],
+      "analysis": "```json\n{\n  \"forecast_target_time\": \"2026-01-11T20:57:35 - 2026-01-11T23:57:35\",\n  \"region\": \"xuancheng\",\n  \"prediction\": {\n    \"temperature_range\": \"-3.0°C 至 0.5°C\",\n    \"precipitation_probability\": \"75%\",\n    \"wind_info\": {\n      \"speed\": \"10.0 - 12.0 m/s\",\n      \"direction\": \"东北风\",\n      \"force_level\": \"5-6级 (强风)\"\n    },\n    \"weather_phenomenon\": \"雨夹雪转小雪\",\n    \"confidence\": \"中等\"\n  },\n  \"analysis_summary\": \"基于过去10小时数据，气温在0°C上下剧烈波动且当前为-0.2°C，伴随持续微量降水（0.3-0.4mm/hr）。由于风速较高（11.1m/s）且云量较大（75.5%），预计未来短时间内将持续低温大风天气，降水形式极可能为雨夹雪或小雪。\"\n}\n```",
+      "method": "gemini_api",
+      "uncertainty": {
+        "confidence_level": 0.95,
+        "temperature_uncertainty": 1.6,
+        "method": "monte_carlo",
+        "description": "基于历史数据和模型输出的不确定性估计"
+      },
+      "time_points": [
+        "2026-01-11T19:57:58.522440",
+        "2026-01-11T20:57:58.522440",
+        "2026-01-11T21:57:58.522440",
+        "2026-01-11T22:57:58.522440",
+        "2026-01-11T23:57:58.522440",
+        "2026-01-12T00:57:58.522440",
+        "2026-01-12T01:57:58.522440"
+      ],
+      "horizon": "6h",
+      "horizon_description": "未来6小时"
+    },
+    "1day": {
+      "success": true,
+      "predictions": [
+        {
+          "timestamp": "2026-01-11T19:58:52.180438",
+          "temperature": -1.0,
+          "temperature_max": 1.0,
+          "temperature_min": -3.0,
+          "humidity": 63.3,
+          "pressure": 1004.0,
+          "wind_speed": 10.3,
+          "wind_direction": "E",
+          "wind_level": 5,
+          "precipitation_probability": 25.6,
+          "visibility": 13.2,
+          "aqi": 27,
+          "air_quality": "Moderate",
+          "weather_condition": "Overcast"
+        },
+        {
+          "timestamp": "2026-01-12T19:58:52.180438",
+          "temperature": 1.8,
+          "temperature_max": 3.8,
+          "temperature_min": -0.2,
+          "humidity": 69.3,
+          "pressure": 993.3,
+          "wind_speed": 10.4,
+          "wind_direction": "NW",
+          "wind_level": 5,
+          "precipitation_probability": 23.7,
+          "visibility": 16.4,
+          "aqi": 57,
+          "air_quality": "Moderate",
+          "weather_condition": "Light Rain"
+        }
+      ],
+      "analysis": "API暂时不可用，使用本地算法生成预测结果",
+      "method": "fallback_numerical",
+      "uncertainty": {
+        "confidence_level": 0.95,
+        "temperature_uncertainty": 1.4,
+        "method": "monte_carlo",
+        "description": "基于历史数据和模型输出的不确定性估计"
+      },
+      "api_error": "HTTPSConnectionPool(host='api2.qiandao.mom', port=443): Read timed out. (read timeout=30)",
+      "time_points": [
+        "2026-01-11T19:58:21.480045",
+        "2026-01-12T19:58:21.480045"
+      ],
+      "horizon": "1day",
+      "horizon_description": "未来1天"
+    },
+    "3day": {
+      "success": true,
+      "predictions": [
+        {
+          "timestamp": "2026-01-11T19:58:54.352066",
+          "temperature": 0.5,
+          "temperature_max": 2.5,
+          "temperature_min": -1.5,
+          "humidity": 50.6,
+          "pressure": 997.1,
+          "wind_speed": 12.1,
+          "wind_direction": "E",
+          "wind_level": 6,
+          "precipitation_probability": 58.4,
+          "visibility": 17.9,
+          "aqi": 9,
+          "air_quality": "Good",
+          "weather_condition": "Overcast"
+        },
+        {
+          "timestamp": "2026-01-12T19:58:54.352066",
+          "temperature": 0.7,
+          "temperature_max": 2.7,
+          "temperature_min": -1.3,
+          "humidity": 62.0,
+          "pressure": 1000.2,
+          "wind_speed": 7.5,
+          "wind_direction": "NW",
+          "wind_level": 4,
+          "precipitation_probability": 9.9,
+          "visibility": 10.9,
+          "aqi": 58,
+          "air_quality": "Moderate",
+          "weather_condition": "Overcast"
+        },
+        {
+          "timestamp": "2026-01-13T19:58:54.352066",
+          "temperature": 0.2,
+          "temperature_max": 2.2,
+          "temperature_min": -1.8,
+          "humidity": 62.3,
+          "pressure": 1000.3,
+          "wind_speed": 9.2,
+          "wind_direction": "S",
+          "wind_level": 5,
+          "precipitation_probability": 15.5,
+          "visibility": 12.3,
+          "aqi": 2,
+          "air_quality": "Moderate",
+          "weather_condition": "Overcast"
+        },
+        {
+          "timestamp": "2026-01-14T19:58:54.352066",
+          "temperature": 0.1,
+          "temperature_max": 2.1,
+          "temperature_min": -1.9,
+          "humidity": 62.4,
+          "pressure": 1002.0,
+          "wind_speed": 11.6,
+          "wind_direction": "NW",
+          "wind_level": 6,
+          "precipitation_probability": 20.2,
+          "visibility": 15.3,
+          "aqi": 48,
+          "air_quality": "Moderate",
+          "weather_condition": "Light Rain"
+        }
+      ],
+      "analysis": "API暂时不可用，使用本地算法生成预测结果",
+      "method": "fallback_numerical",
+      "uncertainty": {
+        "confidence_level": 0.95,
+        "temperature_uncertainty": 0.24,
+        "method": "monte_carlo",
+        "description": "基于历史数据和模型输出的不确定性估计"
+      },
+      "api_error": "403 Client Error: Forbidden for url: https://api2.qiandao.mom/v1/chat/completions",
+      "time_points": [
+        "2026-01-11T19:58:52.181154",
+        "2026-01-12T19:58:52.181154",
+        "2026-01-13T19:58:52.181154",
+        "2026-01-14T19:58:52.181154"
+      ],
+      "horizon": "3day",
+      "horizon_description": "未来3天"
+    },
+    "1week": {
+      "success": true,
+      "predictions": [
+        {
+          "timestamp": "2026-01-11T19:58:56.634080",
+          "temperature": -0.3,
+          "temperature_max": 1.7,
+          "temperature_min": -2.3,
+          "humidity": 69.5,
+          "pressure": 996.9,
+          "wind_speed": 6.4,
+          "wind_direction": "S",
+          "wind_level": 4,
+          "precipitation_probability": 1.6,
+          "visibility": 14.6,
+          "aqi": 100,
+          "air_quality": "Good",
+          "weather_condition": "Sunny"
+        },
+        {
+          "timestamp": "2026-01-18T19:58:56.634080",
+          "temperature": -0.8,
+          "temperature_max": 1.2,
+          "temperature_min": -2.8,
+          "humidity": 55.5,
+          "pressure": 1000.0,
+          "wind_speed": 12.9,
+          "wind_direction": "S",
+          "wind_level": 6,
+          "precipitation_probability": 32.7,
+          "visibility": 14.0,
+          "aqi": 46,
+          "air_quality": "Good",
+          "weather_condition": "Cloudy"
+        },
+        {
+          "timestamp": "2026-01-25T19:58:56.634080",
+          "temperature": -0.3,
+          "temperature_max": 1.7,
+          "temperature_min": -2.3,
+          "humidity": 61.2,
+          "pressure": 1000.9,
+          "wind_speed": 10.2,
+          "wind_direction": "SW",
+          "wind_level": 5,
+          "precipitation_probability": 25.5,
+          "visibility": 14.8,
+          "aqi": 38,
+          "air_quality": "Good",
+          "weather_condition": "Cloudy"
+        },
+        {
+          "timestamp": "2026-02-01T19:58:56.634080",
+          "temperature": -0.6,
+          "temperature_max": 1.4,
+          "temperature_min": -2.6,
+          "humidity": 55.3,
+          "pressure": 995.9,
+          "wind_speed": 11.2,
+          "wind_direction": "SW",
+          "wind_level": 6,
+          "precipitation_probability": 61.4,
+          "visibility": 15.7,
+          "aqi": 65,
+          "air_quality": "Good",
+          "weather_condition": "Moderate Rain"
+        },
+        {
+          "timestamp": "2026-02-08T19:58:56.634080",
+          "temperature": 0.3,
+          "temperature_max": 2.3,
+          "temperature_min": -1.7,
+          "humidity": 61.1,
+          "pressure": 993.8,
+          "wind_speed": 10.5,
+          "wind_direction": "S",
+          "wind_level": 5,
+          "precipitation_probability": 29.3,
+          "visibility": 15.9,
+          "aqi": 73,
+          "air_quality": "Good",
+          "weather_condition": "Overcast"
+        },
+        {
+          "timestamp": "2026-02-15T19:58:56.634080",
+          "temperature": -1.1,
+          "temperature_max": 0.9,
+          "temperature_min": -3.1,
+          "humidity": 62.4,
+          "pressure": 998.5,
+          "wind_speed": 7.0,
+          "wind_direction": "SE",
+          "wind_level": 4,
+          "precipitation_probability": 28.8,
+          "visibility": 16.1,
+          "aqi": 39,
+          "air_quality": "Moderate",
+          "weather_condition": "Cloudy"
+        },
+        {
+          "timestamp": "2026-02-22T19:58:56.634080",
+          "temperature": -3.0,
+          "temperature_max": -1.0,
+          "temperature_min": -5.0,
+          "humidity": 54.1,
+          "pressure": 1005.6,
+          "wind_speed": 11.4,
+          "wind_direction": "NE",
+          "wind_level": 6,
+          "precipitation_probability": 9.7,
+          "visibility": 14.8,
+          "aqi": 26,
+          "air_quality": "Good",
+          "weather_condition": "Sunny"
+        },
+        {
+          "timestamp": "2026-03-01T19:58:56.634080",
+          "temperature": -0.2,
+          "temperature_max": 1.8,
+          "temperature_min": -2.2,
+          "humidity": 63.4,
+          "pressure": 996.3,
+          "wind_speed": 12.6,
+          "wind_direction": "E",
+          "wind_level": 6,
+          "precipitation_probability": 0,
+          "visibility": 13.6,
+          "aqi": 86,
+          "air_quality": "Moderate",
+          "weather_condition": "Cloudy"
+        }
+      ],
+      "analysis": "API暂时不可用，使用本地算法生成预测结果",
+      "method": "fallback_numerical",
+      "uncertainty": {
+        "confidence_level": 0.95,
+        "temperature_uncertainty": 0.94,
+        "method": "monte_carlo",
+        "description": "基于历史数据和模型输出的不确定性估计"
+      },
+      "api_error": "403 Client Error: Forbidden for url: https://api2.qiandao.mom/v1/chat/completions",
+      "time_points": [
+        "2026-01-11T19:58:54.353325",
+        "2026-01-18T19:58:54.353325",
+        "2026-01-25T19:58:54.353325",
+        "2026-02-01T19:58:54.353325",
+        "2026-02-08T19:58:54.353325",
+        "2026-02-15T19:58:54.353325",
+        "2026-02-22T19:58:54.353325",
+        "2026-03-01T19:58:54.353325"
+      ],
+      "horizon": "1week",
+      "horizon_description": "未来1周"
+    },
+    "timestamp": "2026-01-11T19:58:56.634585"
+  },
+  "extreme_weather": {
+    "timestamp": "2026-01-11T19:58:56.635589",
+    "current_weather": {
+      "timestamp": "2026-01-11T19:57:35.607882",
+      "region": "xuancheng",
+      "latitude": 30.9,
+      "longitude": 118.8,
+      "temperature": -0.2,
+      "humidity": 61.6,
+      "pressure": 999.3,
+      "wind_speed": 11.1,
+      "wind_direction": "东北",
+      "precipitation": 0.4,
+      "cloud_cover": 75.5,
+      "visibility": 14.6
+    },
+    "detections": [],
+    "has_extreme": false,
+    "max_severity": 0
+  },
+  "alert": {
+    "issued": false,
+    "message": "当前无极端天气预警"
+  },
+  "visualizations": {
+    "temperature_forecast": "outputs/plots/temperature_forecast_20260111_195858.png",
+    "multi_parameter": "outputs/plots/multi_param_forecast_20260111_195859.png",
+    "dashboard": "outputs/plots/dashboard_20260111_195859.png",
+    "weather_map": "outputs/plots/weather_map_20260111_195900.png",
+    "trend_chart": "outputs/plots/trend_chart_20260111_195900.png",
+    "weather_map_evolution_animation": "outputs/animations/weather_map_evolution_20260111_195901.gif",
+    "extreme_weather_plot": null
+  }
+}
